@@ -28,7 +28,7 @@ func (c contextKey) String() string {
 
 func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configuration {
 	cfg := &ncloud.Configuration{
-		BasePath:      "https://vpcsearchengine.apigw.ntruss.com/api/v1",
+		BasePath:      "https://vpcsearchengine.beta-apigw.ntruss.com/api/v1",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "vses//go",
 	}
@@ -39,7 +39,7 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 
 	var ncloudApiGw string
 	if os.Getenv("NCLOUD_API_GW") == "" {
-		ncloudApiGw = "https://vpcsearchengine.apigw.ntruss.com"
+		ncloudApiGw = "https://vpcsearchengine.beta-apigw.ntruss.com"
 	} else {
 		ncloudApiGw = os.Getenv("NCLOUD_API_GW")
 	}
